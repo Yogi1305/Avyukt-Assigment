@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 8000;
 
 app.use(cookieParser());
 
-const allowedOrigins = [ 'http://localhost:5173'];
+const allowedOrigins = [ 'http://localhost:5173',"https://avyukt-assigment.vercel.app"];
 app.use(cors({
   origin: allowedOrigins,
   credentials: true,
