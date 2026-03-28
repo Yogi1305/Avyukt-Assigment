@@ -125,10 +125,10 @@ export default function Navbar() {
 											'U'}
 									</div>
 									<div className="leading-tight">
-										<p className="text-xs font-semibold text-gray-800 max-w-[120px] truncate">
+										<p className="text-xs font-semibold text-gray-800 max-w-30 truncate">
 											{user?.fullName || user?.name || 'User'}
 										</p>
-										<p className="text-[10px] text-gray-400 max-w-[120px] truncate">
+										<p className="text-[10px] text-gray-400 max-w-30 truncate">
 											{user?.email}
 										</p>
 									</div>
@@ -181,7 +181,7 @@ export default function Navbar() {
 			{/* ── Mobile menu ── */}
 			<div
 				className={`md:hidden overflow-hidden transition-all duration-300 border-t border-gray-100 ${
-					mobileOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
+					mobileOpen ? 'max-h-100 opacity-100' : 'max-h-0 opacity-0'
 				}`}
 			>
 				<div className="px-4 py-4 space-y-1 bg-white">
