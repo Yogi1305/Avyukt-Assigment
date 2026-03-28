@@ -4,8 +4,8 @@ import {createBrowserRouter, Route, RouterProvider}from "react-router-dom"
 import './index.css'
 import App from './App.jsx'
 import Todo from './component/Todo.jsx'
-import Register from './component/register.jsx'
-import Login from './component/login.jsx'
+import Register from './component/Register.jsx'
+import Login from './component/Login.jsx'
 import { ProtectRoute } from './utils/protectroute.js'
 
 
