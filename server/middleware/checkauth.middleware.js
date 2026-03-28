@@ -17,7 +17,7 @@ export const checkAuth = async(req, res, next) => {
         if (!user) {
             return res.status(401).json({ message: 'Invalid token' });
         }
-        req.user = user;
+        req.userId = user._id;
         next();
     } catch (error) {
         console.error('Error in authentication middleware:', error);

@@ -3,13 +3,14 @@ import Todo from "../model/todo.model.js"
 export const createTodo = async (req, res) => {
     try {
         const { title, description } = req.body;
+        console.log(req.userId);
         if (!title || !description) {
             return res.status(400).json({ message: 'Title and description are required' });
         }
         const newTodo = new Todo({
             title,
             description,
-            user: req.user._id
+            userId: req.userId
         });
         await newTodo.save();
         res.status(201).json({ message: 'Todo created successfully', todo: newTodo });
@@ -21,7 +22,7 @@ export const createTodo = async (req, res) => {
 
 export const getTodos = async (req, res) => {
     try {
-        const todos = await Todo.find({ user: req.user._id });  
+        const todos = await Todo.find({ user: req.userId });  
         res.json({ todos ,message: 'Todos fetched successfully' });
     } catch (error) {
         console.error('Error fetching todos:', error);
@@ -34,7 +35,7 @@ export const updateTodo = async (req, res) => {
         const { id } = req.params;
         const { title, description, status } = req.body;
 
-        const todo = await Todo.findOne({ _id: id, user: req.user._id });
+        const todo = await Todo.findOne({ _id: id, userId: req.userId });
         if (!todo) {
             return res.status(404).json({ message: 'Todo not found' });
         }
@@ -52,7 +53,7 @@ export const updateTodo = async (req, res) => {
 export const deleteTodo = async (req, res) => {
     try {
         const { id } = req.params;
-        const todo = await Todo.findOneAndDelete({ _id: id, user: req.user._id });
+        const todo = await Todo.findOneAndDelete({ _id: id, userId: req.userId });
         if (!todo) {
             return res.status(404).json({ message: 'Todo not found' });
         }   
