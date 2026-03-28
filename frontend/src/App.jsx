@@ -1,13 +1,15 @@
-import {Login} from "./component/Login.jsx"
+import { Outlet } from 'react-router-dom'
+import Navbar from "./component/Navbar.jsx"
 
 
 
 function App() {
 
-  return <>
-  
-  <Login/>
-  </>
+  return <div className="w-full h-screen bg-amber-100 ">
+    <Navbar/>
+    <Outlet/>
+
+  </div>
 }
 
 export default App
