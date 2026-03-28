@@ -9,8 +9,8 @@ import Login from './component/login.jsx'
 import { ProtectRoute } from './utils/protectroute.js'
 
 
-export const BASE_URL =
-  "http://localhost:8000"
+// export const BASE_URL ="http://localhost:8000"
+  export const BASE_URL="https://avyukt-assigment.onrender.com"
   const route =createBrowserRouter([
     {
       path:"/",
